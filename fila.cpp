@@ -109,7 +109,7 @@ void desenfileirar()
     //             }
 }
 
-void mostrarListaCompleta()
+void mostrarFilaCompleta()
 {
     // fila completa
     // void imprimeElementosDoInicio() - função base de lucas
