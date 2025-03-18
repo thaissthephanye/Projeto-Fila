@@ -12,16 +12,134 @@ typedef struct Telemento
     struct Telemento *proximo;
 } ELEMENTO;
 
+ELEMENTO *fila = NULL;
 ELEMENTO *inicio = NULL; // Ponteiro para o início da fila
 ELEMENTO *final = NULL;  // Ponteiro para o final da fila
 
-// Protótipos das funções
-void criarFila();
-void enfileirar();
-void desenfileirar();
-void mostrarListaCompleta();
-void mostrarPrimeiroElemento();
-void mostrarUltimoElemento();
+// Funções
+void criarFila()
+{
+    // criar fila - falta testar
+
+    if (fila != NULL)
+    {
+        cout << "Ja existe uma lista criada\n";
+    }
+    else
+    {
+        fila = (ELEMENTO *)malloc(sizeof(ELEMENTO));
+        if (fila == NULL)
+        {
+            cout << "Memoria Insuficiente\n";
+        }
+        else
+        {
+            // apontar o seu proximo para NULO:
+            fila->proximo = NULL;
+            cout << "Informe um valor:\n";
+            cin >> fila->valor;
+        }
+    }
+}
+
+void enfileirar()
+{
+    // enfileirar
+    // void adicionarElementoFim() - função base de lucas
+    // {
+    //     if (listaSimples == NULL)
+    //     {
+    //         criarLista();
+    //     }
+    //     else
+    //     {
+    //         ELEMENTO *ptrtemp = (ELEMENTO *)malloc(sizeof(ELEMENTO));
+    //         if (ptrtemp == NULL)
+    //         {
+    //             cout << "Memoria Insuficiente\n";
+    //         }
+    //         else
+    //         {
+    //             // apontar o seu proximo para NULO:
+    //             ptrtemp->proximo = NULL;
+    //             cout << "Informe um valor:\n";
+    //             cin >> ptrtemp->valor;
+    //             ELEMENTO *temp = listaSimples;
+    //             while (temp->proximo != NULL)
+    //             {
+    //                 temp = temp->proximo;
+    //             }
+    //             // nessse ponto do codigo eu cheguei ao ultimo
+    //             // ATUALIZAR TUDO
+    //             temp->proximo = ptrtemp;
+    //         }
+    //     }
+    // }
+}
+
+void desenfileirar()
+{
+    // desenfileirar
+    // void removerUmElemento() - função base de lucas
+    // {
+    //     if (listaSimples == NULL)
+    //     {
+    //         cout << "A lista esta vazia ou nao existe lista\n";
+    //     }
+    //     else
+    //     {
+    //         cout << "informe um valor a ser removido:";
+    //         int x;
+    //         cin >> x;
+    //         ELEMENTO *temp = listaSimples;
+    //         // testar 3 casos, se é o primeiro, o ultimo ou nao:
+
+    //         // se ta no primeiro elemento
+    //         if (temp->valor == x)
+    //         {
+    //             listaSimples = temp->proximo;
+    //             free(temp);
+    //         }
+    //         else
+    //         {
+    //             temp = listaSimples;
+    //             while (temp->proximo->proximo != NULL)
+    //             {
+    //                 temp = temp->proximo;
+    //             }
+}
+
+void mostrarListaCompleta()
+{
+    // fila completa
+    // void imprimeElementosDoInicio() - função base de lucas
+    // {
+    //     if (listaSimples == NULL)
+    //     {
+    //         cout << "A lista esta vazia ou nao existe lista\n";
+    //     }
+    //     else
+    //     {
+    //         ELEMENTO *temp = listaSimples;
+    //         cout << temp->valor << "\n";
+    //         while (temp->proximo != NULL)
+    //         {
+    //             temp = temp->proximo;
+    //             cout << temp->valor << "\n";
+    //         }
+    //     }
+    // }
+}
+
+void mostrarPrimeiroElemento()
+{
+    // primeiro elemento
+}
+
+void mostrarUltimoElemento()
+{
+    // ultimo elemento
+}
 
 int main()
 {
@@ -69,35 +187,4 @@ int main()
     } while (opcao != 0);
 
     return 0;
-}
-
-// Funções (implementações vazias para o esqueleto)
-void criarFila()
-{
-    // Implementação aqui
-}
-
-void enfileirar()
-{
-    // Implementação aqui
-}
-
-void desenfileirar()
-{
-    // Implementação aqui
-}
-
-void mostrarListaCompleta()
-{
-    // Implementação aqui
-}
-
-void mostrarPrimeiroElemento()
-{
-    // Implementação aqui
-}
-
-void mostrarUltimoElemento()
-{
-    // Implementação aqui
 }
