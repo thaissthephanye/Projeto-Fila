@@ -19,7 +19,7 @@ ELEMENTO *final = NULL;  // Ponteiro para o final da fila
 // Funções
 void criarFila()
 {
-    // criar fila - falta testar
+    // criar fila - ok
 
     if (fila != NULL)
     {
@@ -38,6 +38,10 @@ void criarFila()
             fila->proximo = NULL;
             cout << "Informe um valor:\n";
             cin >> fila->valor;
+            fila = inicio;
+            fila = final;
+
+            cout << "Fila criada!\n";
         }
     }
 }
@@ -46,35 +50,35 @@ void enfileirar()
 {
     // enfileirar
     // void adicionarElementoFim() - função base de lucas
-    // {
-    //     if (listaSimples == NULL)
-    //     {
-    //         criarLista();
-    //     }
-    //     else
-    //     {
-    //         ELEMENTO *ptrtemp = (ELEMENTO *)malloc(sizeof(ELEMENTO));
-    //         if (ptrtemp == NULL)
-    //         {
-    //             cout << "Memoria Insuficiente\n";
-    //         }
-    //         else
-    //         {
-    //             // apontar o seu proximo para NULO:
-    //             ptrtemp->proximo = NULL;
-    //             cout << "Informe um valor:\n";
-    //             cin >> ptrtemp->valor;
-    //             ELEMENTO *temp = listaSimples;
-    //             while (temp->proximo != NULL)
-    //             {
-    //                 temp = temp->proximo;
-    //             }
-    //             // nessse ponto do codigo eu cheguei ao ultimo
-    //             // ATUALIZAR TUDO
-    //             temp->proximo = ptrtemp;
-    //         }
-    //     }
-    // }
+    {
+        if (fila == NULL)
+        {
+            criarFila();
+        }
+        else
+        {
+            ELEMENTO *novoElemento = (ELEMENTO *)malloc(sizeof(ELEMENTO));
+            if (novoElemento == NULL)
+            {
+                cout << "Memoria Insuficiente\n";
+            }
+            else
+            {
+                // apontar o seu proximo para NULO:
+                novoElemento->proximo = NULL;
+                cout << "Informe um valor:\n";
+                cin >> novoElemento->valor;
+                ELEMENTO *temp = listaSimples;
+                while (temp->proximo != NULL)
+                {
+                    temp = temp->proximo;
+                }
+                // nessse ponto do codigo eu cheguei ao ultimo
+                // ATUALIZAR TUDO
+                temp->proximo = ptrtemp;
+            }
+        }
+    }
 }
 
 void desenfileirar()
@@ -151,7 +155,7 @@ int main()
         cout << "1. Criar Fila\n";
         cout << "2. Enfileirar\n";
         cout << "3. Desenfileirar\n";
-        cout << "4. Mostrar Lista Completa\n";
+        cout << "4. Mostrar Fila Completa\n";
         cout << "5. Mostrar Primeiro Elemento\n";
         cout << "6. Mostrar Ultimo Elemento\n";
         cout << "0. Sair\n";
@@ -170,7 +174,7 @@ int main()
             desenfileirar();
             break;
         case 4:
-            mostrarListaCompleta();
+            mostrarFilaCompleta();
             break;
         case 5:
             mostrarPrimeiroElemento();
